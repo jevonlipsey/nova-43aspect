@@ -21,8 +21,6 @@
   --on-accent: #1d0e05;
   --ok: #66d19a;
   --ok-bg: #16281e;
-  --warn: #e6b455;
-  --warn-bg: #2e2412;
   --plan: #b3a597;
   --plan-bg: #2b221b;
   --focus: #8ab4ff;
@@ -103,7 +101,6 @@ h1 { font-size: clamp(1.75rem, 4vw + .5rem, 2.6rem); line-height: 1.1; margin: 0
 .status { display: inline-flex; align-items: center; gap: .4rem; font-size: .8rem; font-weight: 600; padding: .2rem .6rem; border-radius: 999px; }
 .status::before { content: ""; width: .5rem; height: .5rem; border-radius: 50%; background: currentColor; }
 .status.complete { color: var(--ok); background: var(--ok-bg); }
-.status.progress { color: var(--warn); background: var(--warn-bg); }
 .status.planned { color: var(--plan); background: var(--plan-bg); }
 .method { margin: 0; font-size: .9rem; color: var(--muted); }
 .method strong { display: block; color: var(--text); font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .1rem; }
@@ -124,6 +121,18 @@ h1 { font-size: clamp(1.75rem, 4vw + .5rem, 2.6rem); line-height: 1.1; margin: 0
 .btn.off { flex: 1; color: var(--muted); background: transparent; border-style: dashed; cursor: default; }
 .btn.off:hover { border-color: var(--border); }
 .ico { width: 1.1rem; height: 1.1rem; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Search */
+[hidden] { display: none !important; }
+.tools { display: flex; align-items: center; gap: .5rem 1rem; flex-wrap: wrap; margin: -.25rem 0 1rem; }
+.search { display: flex; align-items: center; gap: .6rem; flex: 1 1 20rem; max-width: 28rem; min-height: 2.75rem; padding: 0 .75rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--muted); }
+.search:focus-within { outline: 3px solid var(--focus); outline-offset: 2px; border-color: var(--muted); }
+.search input { flex: 1; min-width: 0; min-height: 2.5rem; font: inherit; color: var(--text); background: transparent; border: 0; outline: 0; }
+.search input::placeholder { color: var(--muted); opacity: 1; }
+.search kbd { font: 600 .75rem var(--mono); color: var(--muted); border: 1px solid var(--border); border-radius: 5px; padding: .05rem .4rem; }
+@media (pointer: coarse) { .search kbd { display: none; } }
+.count, .empty { margin: 0; font-size: .85rem; color: var(--muted); }
+.empty { margin: -1.5rem 0 2.5rem; }
 
 /* Guide */
 .guide { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap: 1rem; margin-bottom: 2rem; }
@@ -146,6 +155,7 @@ h3 { font-size: 1.05rem; margin: 0 0 .75rem; }
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-launch" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
   <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5"/></symbol>
 </svg>
 
@@ -157,6 +167,10 @@ h3 { font-size: 1.05rem; margin: 0 0 .75rem; }
   </header>
 
   <h2 id="games">Games</h2>
+  <div class="tools">
+    <label class="search"><svg class="ico" aria-hidden="true"><use href="#i-search"/></svg><input id="q" type="search" placeholder="Search games, status, method…" aria-label="Search games" autocomplete="off" spellcheck="false"><kbd aria-hidden="true">/</kbd></label>
+    <p class="count" id="count" aria-live="polite">6 games</p>
+  </div>
   <ul class="grid" aria-labelledby="games">
     <li class="card">
       <div class="thumb" style="--c1:#7a4a1c;--c2:#2a1608"><img class="shot" src="img/spelunky2.jpg" alt="" loading="lazy"><span class="ratio">4:3</span><h3 class="thumb-title">Spelunky 2</h3></div>
@@ -197,10 +211,10 @@ h3 { font-size: 1.05rem; margin: 0 0 .75rem; }
     <li class="card">
       <div class="thumb" style="--c1:#8c2b2b;--c2:#22191d"><img class="shot" src="img/gungeon.jpg" alt="" loading="lazy"><span class="ratio">4:3</span><h3 class="thumb-title">Enter the Gungeon</h3></div>
       <div class="body">
-        <div class="meta"><span class="status progress">In Progress</span></div>
+        <div class="meta"><span class="status complete">Complete</span></div>
         <p class="method"><strong>Method</strong>IL / camera hooks</p>
         <div class="actions">
-          <span class="btn off" aria-disabled="true">Coming Soon</span>
+          <a class="btn primary" href="https://jevonlipsey.github.io/gungeon-43aspect/"><svg class="ico" aria-hidden="true"><use href="#i-launch"/></svg>Launch Patcher</a>
           <a class="btn" href="https://github.com/jevonlipsey/gungeon-43aspect" aria-label="Enter the Gungeon source repo"><svg class="ico" aria-hidden="true"><use href="#i-code"/></svg>Repo</a>
         </div>
       </div>
@@ -224,6 +238,7 @@ h3 { font-size: 1.05rem; margin: 0 0 .75rem; }
       </div>
     </li>
   </ul>
+  <p class="empty" id="empty" hidden></p>
 
   <h2 id="guide">Quick guide</h2>
   <div class="guide">
@@ -253,5 +268,41 @@ h3 { font-size: 1.05rem; margin: 0 0 .75rem; }
     <p>Not affiliated with or endorsed by the games' developers or publishers.</p>
   </footer>
 </main>
+<script>
+(function () {
+  var q = document.getElementById("q"), count = document.getElementById("count"), empty = document.getElementById("empty");
+  var cards = Array.prototype.slice.call(document.querySelectorAll(".grid > li"));
+  var texts = cards.map(function (c) { return c.textContent.toLowerCase(); });
+  function apply() {
+    var raw = q.value.trim(), terms = raw.toLowerCase().split(/\s+/).filter(Boolean), n = 0;
+    cards.forEach(function (c, i) {
+      var ok = terms.every(function (t) { return texts[i].indexOf(t) !== -1; });
+      c.hidden = !ok;
+      if (ok) n++;
+    });
+    count.textContent = terms.length ? n + " of " + cards.length + " games" : cards.length + " games";
+    empty.hidden = n !== 0;
+    empty.textContent = n === 0 ? "No games match \u201c" + raw + "\u201d." : "";
+    try {
+      var u = new URL(location.href);
+      if (raw) u.searchParams.set("q", raw); else u.searchParams.delete("q");
+      history.replaceState(null, "", u);
+    } catch (e) {}
+  }
+  q.addEventListener("input", apply);
+  document.addEventListener("keydown", function (e) {
+    var a = document.activeElement, tag = a && a.tagName;
+    if (e.key === "/" && !e.ctrlKey && !e.metaKey && !e.altKey && tag !== "INPUT" && tag !== "TEXTAREA" && !(a && a.isContentEditable)) {
+      e.preventDefault(); q.focus();
+    } else if (e.key === "Escape" && a === q && q.value) {
+      q.value = ""; apply();
+    }
+  });
+  try {
+    var init = new URLSearchParams(location.search).get("q");
+    if (init) { q.value = init; apply(); }
+  } catch (e) {}
+})();
+</script>
 </body>
 </html>

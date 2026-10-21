@@ -15,7 +15,7 @@ Every patcher works on your own legally owned copy of the game. Files are patche
 | **Spelunky 2** | Complete | Proxy DLL (`discord_game_sdk.dll`) + Heap Patch | [Web Patcher](https://jevonlipsey.github.io/spelunky2-43aspect/) | [Repo](https://github.com/jevonlipsey/spelunky2-43aspect) |
 | **Chef RPG** | Complete | Managed Assembly (`Assembly-CSharp.dll`) | [Web Patcher](https://jevonlipsey.github.io/chefrpg-43aspect/) | [Repo](https://github.com/jevonlipsey/chefrpg-43aspect) |
 | **Celeste** | Complete | Standalone EXE Patch / Everest Mod | [Web Patcher](https://jevonlipsey.github.io/celeste-43aspect/) | [Repo](https://github.com/jevonlipsey/celeste-43aspect) |
-| **Enter the Gungeon** | In Progress | IL / Camera Hooks | Coming Soon | [Repo](https://github.com/jevonlipsey/gungeon-43aspect) |
+| **Enter the Gungeon** | Complete | IL / Camera Hooks | [Web Patcher](https://jevonlipsey.github.io/gungeon-43aspect/) | [Repo](https://github.com/jevonlipsey/gungeon-43aspect) |
 | **Hades II** | Planned | Targeted Boon-Selection UI Scale | TBD | TBD |
 | **Absolum** | Planned | Native Aspect Mod | TBD | TBD |
 
@@ -26,6 +26,7 @@ What each patcher takes:
 | Spelunky 2 | `Spel2.exe` | The web patcher embeds the 4:3 mod and the Android heap fix in the exe. On PC you can instead drop in `discord_game_sdk.dll` from the [latest release](https://github.com/jevonlipsey/spelunky2-43aspect/releases/latest). Use one, not both. |
 | Chef RPG | `Chef RPG_Data/Managed/Assembly-CSharp.dll` | Desktop patchers for Windows, macOS and Linux are on the [releases page](https://github.com/jevonlipsey/chefrpg-43aspect/releases). |
 | Celeste | `Celeste.exe` | Needs the FNA 1.4.0.0 build (Steam: Properties → Betas → `beta 1.3.3.0`). The web patcher refuses an exe that already has Everest; use the [CelesteFit](https://github.com/jevonlipsey/celeste-43aspect/releases/latest) Everest mod for that. |
+| Enter the Gungeon | `EtG_Data/Managed/Assembly-CSharp.dll` | Desktop patchers are on the [releases page](https://github.com/jevonlipsey/gungeon-43aspect/releases). |
 
 ## Quick guide
 
