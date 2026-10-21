@@ -16,7 +16,7 @@ Every patcher works on your own legally owned copy of the game. Files are patche
 | **Chef RPG** | Complete | Managed Assembly (`Assembly-CSharp.dll`) | [Web Patcher](https://jevonlipsey.github.io/chefrpg-43aspect/) | [Repo](https://github.com/jevonlipsey/chefrpg-43aspect) |
 | **Celeste** | Complete | Standalone EXE Patch / Everest Mod | [Web Patcher](https://jevonlipsey.github.io/celeste-43aspect/) | [Repo](https://github.com/jevonlipsey/celeste-43aspect) |
 | **Enter the Gungeon** | Complete | IL / Camera Hooks | [Web Patcher](https://jevonlipsey.github.io/gungeon-43aspect/) | [Repo](https://github.com/jevonlipsey/gungeon-43aspect) |
-| **Hades II** | Planned | Targeted Boon-Selection UI Scale | TBD | TBD |
+| **Hades II** | Planned | Targeted boon-selection and cutscene UI scale. Hades II already supports 4:3 natively, so this is a smaller patch | TBD | TBD |
 | **Absolum** | Planned | Native Aspect Mod | TBD | TBD |
 
 What each patcher takes:
@@ -69,6 +69,10 @@ Each mod's own README has the full install steps, configuration and troubleshoot
 | `docs/img/` | card thumbnails, Steam store screenshots cropped to 800x600 |
 
 To add a game, add a row to the matrix above, a card to `docs/index.html` and a thumbnail to `docs/img/`.
+
+## AI disclosure
+
+I supervised Claude (Anthropic) while building these patches. Claude Opus 5.5 and Sonnet 5.5 wrote much of the code and tooling. I directed the work, reviewed the changes and tested them on my own copies of the games.
 
 ## Credits
 
