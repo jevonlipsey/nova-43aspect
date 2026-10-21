@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nova 4:3 Collection</title>
+<meta name="description" content="Native 4:3 aspect ratio, UI containment and compatibility mods for 4:3 displays: Retroid Pocket Nova, CRT setups and custom resolutions.">
+<meta name="theme-color" content="#17120e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='6.5' width='26' height='19.5' rx='3' fill='%23ff8a55'/%3E%3Ctext x='16' y='20.5' font-family='monospace' font-size='10' font-weight='700' text-anchor='middle' fill='%231d0e05'%3E4:3%3C/text%3E%3C/svg%3E">
+<style>
+:root {
+  color-scheme: dark;
+  --bg: #17120e;
+  --surface: #211a15;
+  --surface-2: #2b221b;
+  --text: #f3ebe2;
+  --muted: #b3a597;
+  --border: #3b2f26;
+  --accent: #ff8a55;
+  --accent-hover: #ffa076;
+  --on-accent: #1d0e05;
+  --ok: #66d19a;
+  --ok-bg: #16281e;
+  --warn: #e6b455;
+  --warn-bg: #2e2412;
+  --plan: #b3a597;
+  --plan-bg: #2b221b;
+  --focus: #8ab4ff;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+a { color: var(--accent); }
+a:hover { color: var(--accent-hover); }
+code { font: .9em var(--mono); background: var(--surface-2); padding: .1em .35em; border-radius: 4px; overflow-wrap: anywhere; }
+
+.wrap {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+  padding-left: max(1rem, env(safe-area-inset-left));
+  padding-right: max(1rem, env(safe-area-inset-right));
+}
+
+/* Header */
+.hero { margin-bottom: 2rem; max-width: 46rem; }
+.brand { display: inline-flex; align-items: center; gap: .6rem; font: 600 .85rem var(--mono); color: var(--muted); letter-spacing: .04em; text-transform: uppercase; margin-bottom: .75rem; }
+.brand-mark { display: inline-grid; place-items: center; width: 2.4rem; aspect-ratio: 4 / 3; border-radius: 5px; background: var(--accent); color: var(--on-accent); font-size: .7rem; font-weight: 700; letter-spacing: 0; }
+h1 { font-size: clamp(1.75rem, 4vw + .5rem, 2.6rem); line-height: 1.1; margin: 0 0 .75rem; letter-spacing: -.02em; }
+.lede { font-size: 1.05rem; color: var(--muted); margin: 0 0 1rem; }
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; margin: 0; list-style: none; }
+.chips li { font-size: .85rem; padding: .25rem .65rem; border: 1px solid var(--border); border-radius: 999px; color: var(--muted); }
+
+/* Grid */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr)); gap: 1rem; padding: 0; margin: 0 0 2.5rem; list-style: none; }
+
+.card {
+  display: flex; flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color .15s, transform .15s;
+}
+.card:hover { border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); }
+@media (prefers-reduced-motion: no-preference) { .card:hover { transform: translateY(-2px); } }
+.card.planned { background: color-mix(in srgb, var(--surface) 60%, var(--bg)); }
+
+/* 4:3 thumbnail; the dashed box marks where the 16:9 picture used to sit */
+.thumb {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  display: flex; align-items: flex-end;
+  padding: 1rem;
+  background: linear-gradient(160deg, var(--c1), var(--c2));
+  overflow: hidden;
+  isolation: isolate;
+}
+.thumb::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: repeating-linear-gradient(0deg, rgba(0,0,0,.16) 0 1px, transparent 1px 3px);
+}
+.thumb::after {
+  content: "16:9"; position: absolute; left: 0; right: 0; top: 12.5%; bottom: 12.5%; z-index: -1;
+  border-block: 1px dashed rgba(255,255,255,.28);
+  font: 600 .65rem var(--mono); color: rgba(255,255,255,.45);
+  padding: .3rem .5rem; text-align: right;
+}
+.thumb-title { margin: 0; font-size: 1.6rem; line-height: 1.05; font-weight: 800; letter-spacing: -.02em; color: #fff; text-shadow: 0 2px 12px rgba(0,0,0,.45); }
+.ratio { position: absolute; top: .75rem; left: .75rem; font: 700 .7rem var(--mono); padding: .15rem .4rem; border-radius: 4px; background: rgba(0,0,0,.45); color: #fff; }
+.card.planned .thumb { filter: saturate(.35) brightness(.8); }
+
+.body { display: flex; flex-direction: column; gap: .75rem; padding: 1rem 1rem 1.1rem; flex: 1; }
+.meta { display: flex; align-items: center; justify-content: space-between; gap: .5rem; flex-wrap: wrap; }
+.status { display: inline-flex; align-items: center; gap: .4rem; font-size: .8rem; font-weight: 600; padding: .2rem .6rem; border-radius: 999px; }
+.status::before { content: ""; width: .5rem; height: .5rem; border-radius: 50%; background: currentColor; }
+.status.complete { color: var(--ok); background: var(--ok-bg); }
+.status.progress { color: var(--warn); background: var(--warn-bg); }
+.status.planned { color: var(--plan); background: var(--plan-bg); }
+.method { margin: 0; font-size: .9rem; color: var(--muted); }
+.method strong { display: block; color: var(--text); font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .1rem; }
+
+.actions { display: flex; gap: .5rem; margin-top: auto; padding-top: .25rem; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .45rem;
+  min-height: 2.75rem; padding: .5rem 1rem;
+  font: inherit; font-weight: 600; font-size: .95rem; text-decoration: none;
+  color: var(--text); background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: 10px;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn:hover { color: var(--text); border-color: var(--muted); }
+.btn:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.btn.primary { flex: 1; background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn.primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: var(--on-accent); }
+.btn.off { flex: 1; color: var(--muted); background: transparent; border-style: dashed; cursor: default; }
+.btn.off:hover { border-color: var(--border); }
+.ico { width: 1.1rem; height: 1.1rem; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Guide */
+.guide { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap: 1rem; margin-bottom: 2rem; }
+.panel { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem; }
+h2 { font-size: 1.3rem; margin: 0 0 1rem; letter-spacing: -.01em; }
+h3 { font-size: 1.05rem; margin: 0 0 .75rem; }
+.panel ol, .panel ul { margin: 0; padding-left: 1.25rem; }
+.panel li { margin-bottom: .5rem; }
+.panel li:last-child { margin-bottom: 0; }
+.note { margin: 1rem 0 0; font-size: .9rem; color: var(--muted); }
+
+.foot { color: var(--muted); font-size: .8rem; text-align: center; border-top: 1px solid var(--border); padding-top: 1.5rem; }
+.foot p { margin: 0 0 .4rem; }
+
+@media (min-width: 40rem) {
+  .wrap { padding-top: 3.5rem; }
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-launch" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5"/></symbol>
+</svg>
+
+<main class="wrap">
+  <header class="hero">
+    <div class="brand"><span class="brand-mark">4:3</span> Nova collection</div>
+    <h1>Nova 4:3 Aspect Ratio Collection</h1>
+    <p class="lede">Native 4:3 aspect ratio, UI containment and compatibility mods for games locked to 16:9. Each patcher runs in your browser on your own copy of the game. Nothing is uploaded, and no game files are distributed.</p>
+    <ul class="chips" aria-label="Built for">
+      <li>Retroid Pocket Nova · 1280×960</li>
+      <li>CRT setups</li>
+      <li>Custom resolutions</li>
+    </ul>
+  </header>
+
+  <h2 id="games">Games</h2>
+  <ul class="grid" aria-labelledby="games">
+    <li class="card">
+      <div class="thumb" style="--c1:#7a4a1c;--c2:#2a1608"><span class="ratio">4:3</span><h3 class="thumb-title">Spelunky 2</h3></div>
+      <div class="body">
+        <div class="meta"><span class="status complete">Complete</span></div>
+        <p class="method"><strong>Method</strong>Proxy DLL (<code>discord_game_sdk.dll</code>) + heap patch</p>
+        <div class="actions">
+          <a class="btn primary" href="https://jevonlipsey.github.io/spelunky2-43aspect/"><svg class="ico" aria-hidden="true"><use href="#i-launch"/></svg>Launch Patcher</a>
+          <a class="btn" href="https://github.com/jevonlipsey/spelunky2-43aspect" aria-label="Spelunky 2 source repo"><svg class="ico" aria-hidden="true"><use href="#i-code"/></svg>Repo</a>
+        </div>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="thumb" style="--c1:#2f7a5a;--c2:#123024"><span class="ratio">4:3</span><h3 class="thumb-title">Chef RPG</h3></div>
+      <div class="body">
+        <div class="meta"><span class="status complete">Complete</span></div>
+        <p class="method"><strong>Method</strong>Managed assembly (<code>Assembly-CSharp.dll</code>)</p>
+        <div class="actions">
+          <a class="btn primary" href="https://jevonlipsey.github.io/chefrpg-43aspect/"><svg class="ico" aria-hidden="true"><use href="#i-launch"/></svg>Launch Patcher</a>
+          <a class="btn" href="https://github.com/jevonlipsey/chefrpg-43aspect" aria-label="Chef RPG source repo"><svg class="ico" aria-hidden="true"><use href="#i-code"/></svg>Repo</a>
+        </div>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="thumb" style="--c1:#b4507e;--c2:#2c1a45"><span class="ratio">4:3</span><h3 class="thumb-title">Celeste</h3></div>
+      <div class="body">
+        <div class="meta"><span class="status complete">Complete</span></div>
+        <p class="method"><strong>Method</strong>Standalone EXE patch / Everest mod</p>
+        <div class="actions">
+          <a class="btn primary" href="https://jevonlipsey.github.io/celeste-43aspect/"><svg class="ico" aria-hidden="true"><use href="#i-launch"/></svg>Launch Patcher</a>
+          <a class="btn" href="https://github.com/jevonlipsey/celeste-43aspect" aria-label="Celeste source repo"><svg class="ico" aria-hidden="true"><use href="#i-code"/></svg>Repo</a>
+        </div>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="thumb" style="--c1:#8c2b2b;--c2:#22191d"><span class="ratio">4:3</span><h3 class="thumb-title">Enter the Gungeon</h3></div>
+      <div class="body">
+        <div class="meta"><span class="status progress">In Progress</span></div>
+        <p class="method"><strong>Method</strong>IL / camera hooks</p>
+        <div class="actions">
+          <span class="btn off" aria-disabled="true">Coming Soon</span>
+          <a class="btn" href="https://github.com/jevonlipsey/gungeon-43aspect" aria-label="Enter the Gungeon source repo"><svg class="ico" aria-hidden="true"><use href="#i-code"/></svg>Repo</a>
+        </div>
+      </div>
+    </li>
+
+    <li class="card planned">
+      <div class="thumb" style="--c1:#5b3a8a;--c2:#14261f"><span class="ratio">4:3</span><h3 class="thumb-title">Hades II</h3></div>
+      <div class="body">
+        <div class="meta"><span class="status planned">Planned</span></div>
+        <p class="method"><strong>Method</strong>Targeted boon-selection UI scale</p>
+        <div class="actions"><span class="btn off" aria-disabled="true">Patcher TBD</span></div>
+      </div>
+    </li>
+
+    <li class="card planned">
+      <div class="thumb" style="--c1:#3d5a8a;--c2:#151a2a"><span class="ratio">4:3</span><h3 class="thumb-title">Absolom</h3></div>
+      <div class="body">
+        <div class="meta"><span class="status planned">Planned</span></div>
+        <p class="method"><strong>Method</strong>Native aspect mod</p>
+        <div class="actions"><span class="btn off" aria-disabled="true">Patcher TBD</span></div>
+      </div>
+    </li>
+  </ul>
+
+  <h2 id="guide">Quick guide</h2>
+  <div class="guide">
+    <section class="panel" aria-labelledby="g-android">
+      <h3 id="g-android">Android (DroidDeck / GameNative)</h3>
+      <ol>
+        <li>Open the game's patcher on the handheld and pick the file from the game folder: <code>Spel2.exe</code>, <code>Assembly-CSharp.dll</code> or <code>Celeste.exe</code>.</li>
+        <li>Save the patched copy over the original. Keep a <code>.bak</code>.</li>
+        <li>In DroidDeck's display settings, set <strong>Resolution</strong> to <code>Match screen (1280x960)</code> and <strong>16:9 game fit</strong> to <code>Stretch</code>. In GameNative, give the container the panel's native resolution.</li>
+        <li>Fully exit and relaunch the app and the game.</li>
+      </ol>
+      <p class="note">Black bars after patching almost always come from the container's resolution, not the mod.</p>
+    </section>
+    <section class="panel" aria-labelledby="g-pc">
+      <h3 id="g-pc">Native PC</h3>
+      <ul>
+        <li><strong>Spelunky 2:</strong> drop the release <code>discord_game_sdk.dll</code> next to <code>Spel2.exe</code>, or use the patcher.</li>
+        <li><strong>Chef RPG:</strong> use the patcher or the desktop <code>patcher.exe</code>, then swap in <code>Assembly-CSharp-43.dll</code>.</li>
+        <li><strong>Celeste:</strong> install Everest and add <code>CelesteFit.zip</code> to <code>Mods/</code>, or patch <code>Celeste.exe</code>.</li>
+        <li>Set the game to your display's native 4:3 resolution.</li>
+      </ul>
+      <p class="note">Steam's "Verify integrity" and game updates restore the original files. Re-patch after either.</p>
+    </section>
+  </div>
+
+  <footer class="foot">
+    <p>Full install steps and troubleshooting are in each game's repo. Index source: <a href="https://github.com/jevonlipsey/nova-43aspect">jevonlipsey/nova-43aspect</a>.</p>
+    <p>Unofficial fan projects, not affiliated with or endorsed by the games' developers or publishers.</p>
+  </footer>
+</main>
+</body>
+</html>
