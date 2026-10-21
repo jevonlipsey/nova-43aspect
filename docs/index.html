@@ -54,9 +54,7 @@ code { font: .9em var(--mono); background: var(--surface-2); padding: .1em .35em
 .brand { display: inline-flex; align-items: center; gap: .6rem; font: 600 .85rem var(--mono); color: var(--muted); letter-spacing: .04em; text-transform: uppercase; margin-bottom: .75rem; }
 .brand-mark { display: inline-grid; place-items: center; width: 2.4rem; aspect-ratio: 4 / 3; border-radius: 5px; background: var(--accent); color: var(--on-accent); font-size: .7rem; font-weight: 700; letter-spacing: 0; }
 h1 { font-size: clamp(1.75rem, 4vw + .5rem, 2.6rem); line-height: 1.1; margin: 0 0 .75rem; letter-spacing: -.02em; }
-.lede { font-size: 1.05rem; color: var(--muted); margin: 0 0 1rem; }
-.chips { display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; margin: 0; list-style: none; }
-.chips li { font-size: .85rem; padding: .25rem .65rem; border: 1px solid var(--border); border-radius: 999px; color: var(--muted); }
+.lede { font-size: 1.05rem; color: var(--muted); margin: 0; }
 
 /* Grid */
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr)); gap: 1rem; padding: 0; margin: 0 0 2.5rem; list-style: none; }
@@ -83,9 +81,12 @@ h1 { font-size: clamp(1.75rem, 4vw + .5rem, 2.6rem); line-height: 1.1; margin: 0
   overflow: hidden;
   isolation: isolate;
 }
+.shot { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; }
 .thumb::before {
   content: ""; position: absolute; inset: 0; z-index: -1;
-  background: repeating-linear-gradient(0deg, rgba(0,0,0,.16) 0 1px, transparent 1px 3px);
+  background:
+    linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,0) 45%),
+    repeating-linear-gradient(0deg, rgba(0,0,0,.12) 0 1px, transparent 1px 3px);
 }
 .thumb::after {
   content: "16:9"; position: absolute; left: 0; right: 0; top: 12.5%; bottom: 12.5%; z-index: -1;
@@ -95,7 +96,7 @@ h1 { font-size: clamp(1.75rem, 4vw + .5rem, 2.6rem); line-height: 1.1; margin: 0
 }
 .thumb-title { margin: 0; font-size: 1.6rem; line-height: 1.05; font-weight: 800; letter-spacing: -.02em; color: #fff; text-shadow: 0 2px 12px rgba(0,0,0,.45); }
 .ratio { position: absolute; top: .75rem; left: .75rem; font: 700 .7rem var(--mono); padding: .15rem .4rem; border-radius: 4px; background: rgba(0,0,0,.45); color: #fff; }
-.card.planned .thumb { filter: saturate(.35) brightness(.8); }
+.card.planned .thumb { filter: saturate(.55) brightness(.85); }
 
 .body { display: flex; flex-direction: column; gap: .75rem; padding: 1rem 1rem 1.1rem; flex: 1; }
 .meta { display: flex; align-items: center; justify-content: space-between; gap: .5rem; flex-wrap: wrap; }
@@ -153,17 +154,12 @@ h3 { font-size: 1.05rem; margin: 0 0 .75rem; }
     <div class="brand"><span class="brand-mark">4:3</span> Nova collection</div>
     <h1>Nova 4:3 Aspect Ratio Collection</h1>
     <p class="lede">Native 4:3 aspect ratio, UI containment and compatibility mods for games locked to 16:9. Each patcher runs in your browser on your own copy of the game. Nothing is uploaded, and no game files are distributed.</p>
-    <ul class="chips" aria-label="Built for">
-      <li>Retroid Pocket Nova · 1280×960</li>
-      <li>CRT setups</li>
-      <li>Custom resolutions</li>
-    </ul>
   </header>
 
   <h2 id="games">Games</h2>
   <ul class="grid" aria-labelledby="games">
     <li class="card">
-      <div class="thumb" style="--c1:#7a4a1c;--c2:#2a1608"><span class="ratio">4:3</span><h3 class="thumb-title">Spelunky 2</h3></div>
+      <div class="thumb" style="--c1:#7a4a1c;--c2:#2a1608"><img class="shot" src="img/spelunky2.jpg" alt="" loading="lazy"><span class="ratio">4:3</span><h3 class="thumb-title">Spelunky 2</h3></div>
       <div class="body">
         <div class="meta"><span class="status complete">Complete</span></div>
         <p class="method"><strong>Method</strong>Proxy DLL (<code>discord_game_sdk.dll</code>) + heap patch</p>
@@ -175,7 +171,7 @@ h3 { font-size: 1.05rem; margin: 0 0 .75rem; }
     </li>
 
     <li class="card">
-      <div class="thumb" style="--c1:#2f7a5a;--c2:#123024"><span class="ratio">4:3</span><h3 class="thumb-title">Chef RPG</h3></div>
+      <div class="thumb" style="--c1:#2f7a5a;--c2:#123024"><img class="shot" src="img/chefrpg.jpg" alt="" loading="lazy"><span class="ratio">4:3</span><h3 class="thumb-title">Chef RPG</h3></div>
       <div class="body">
         <div class="meta"><span class="status complete">Complete</span></div>
         <p class="method"><strong>Method</strong>Managed assembly (<code>Assembly-CSharp.dll</code>)</p>
@@ -187,7 +183,7 @@ h3 { font-size: 1.05rem; margin: 0 0 .75rem; }
     </li>
 
     <li class="card">
-      <div class="thumb" style="--c1:#b4507e;--c2:#2c1a45"><span class="ratio">4:3</span><h3 class="thumb-title">Celeste</h3></div>
+      <div class="thumb" style="--c1:#b4507e;--c2:#2c1a45"><img class="shot" src="img/celeste.jpg" alt="" loading="lazy"><span class="ratio">4:3</span><h3 class="thumb-title">Celeste</h3></div>
       <div class="body">
         <div class="meta"><span class="status complete">Complete</span></div>
         <p class="method"><strong>Method</strong>Standalone EXE patch / Everest mod</p>
@@ -199,7 +195,7 @@ h3 { font-size: 1.05rem; margin: 0 0 .75rem; }
     </li>
 
     <li class="card">
-      <div class="thumb" style="--c1:#8c2b2b;--c2:#22191d"><span class="ratio">4:3</span><h3 class="thumb-title">Enter the Gungeon</h3></div>
+      <div class="thumb" style="--c1:#8c2b2b;--c2:#22191d"><img class="shot" src="img/gungeon.jpg" alt="" loading="lazy"><span class="ratio">4:3</span><h3 class="thumb-title">Enter the Gungeon</h3></div>
       <div class="body">
         <div class="meta"><span class="status progress">In Progress</span></div>
         <p class="method"><strong>Method</strong>IL / camera hooks</p>
@@ -211,7 +207,7 @@ h3 { font-size: 1.05rem; margin: 0 0 .75rem; }
     </li>
 
     <li class="card planned">
-      <div class="thumb" style="--c1:#5b3a8a;--c2:#14261f"><span class="ratio">4:3</span><h3 class="thumb-title">Hades II</h3></div>
+      <div class="thumb" style="--c1:#5b3a8a;--c2:#14261f"><img class="shot" src="img/hades2.jpg" alt="" loading="lazy"><span class="ratio">4:3</span><h3 class="thumb-title">Hades II</h3></div>
       <div class="body">
         <div class="meta"><span class="status planned">Planned</span></div>
         <p class="method"><strong>Method</strong>Targeted boon-selection UI scale</p>
@@ -220,7 +216,7 @@ h3 { font-size: 1.05rem; margin: 0 0 .75rem; }
     </li>
 
     <li class="card planned">
-      <div class="thumb" style="--c1:#3d5a8a;--c2:#151a2a"><span class="ratio">4:3</span><h3 class="thumb-title">Absolom</h3></div>
+      <div class="thumb" style="--c1:#3d5a8a;--c2:#151a2a"><img class="shot" src="img/absolum.jpg" alt="" loading="lazy"><span class="ratio">4:3</span><h3 class="thumb-title">Absolum</h3></div>
       <div class="body">
         <div class="meta"><span class="status planned">Planned</span></div>
         <p class="method"><strong>Method</strong>Native aspect mod</p>
@@ -243,19 +239,18 @@ h3 { font-size: 1.05rem; margin: 0 0 .75rem; }
     </section>
     <section class="panel" aria-labelledby="g-pc">
       <h3 id="g-pc">Native PC</h3>
-      <ul>
-        <li><strong>Spelunky 2:</strong> drop the release <code>discord_game_sdk.dll</code> next to <code>Spel2.exe</code>, or use the patcher.</li>
-        <li><strong>Chef RPG:</strong> use the patcher or the desktop <code>patcher.exe</code>, then swap in <code>Assembly-CSharp-43.dll</code>.</li>
-        <li><strong>Celeste:</strong> install Everest and add <code>CelesteFit.zip</code> to <code>Mods/</code>, or patch <code>Celeste.exe</code>.</li>
+      <ol>
+        <li>Open the game's patcher and patch the file from your game folder, or download the prebuilt files from the Releases page of the game's repo.</li>
+        <li>Replace the originals in your game folder. Keep backups.</li>
         <li>Set the game to your display's native 4:3 resolution.</li>
-      </ul>
+      </ol>
       <p class="note">Steam's "Verify integrity" and game updates restore the original files. Re-patch after either.</p>
     </section>
   </div>
 
   <footer class="foot">
     <p>Full install steps and troubleshooting are in each game's repo. Index source: <a href="https://github.com/jevonlipsey/nova-43aspect">jevonlipsey/nova-43aspect</a>.</p>
-    <p>Unofficial fan projects, not affiliated with or endorsed by the games' developers or publishers.</p>
+    <p>Not affiliated with or endorsed by the games' developers or publishers.</p>
   </footer>
 </main>
 </body>

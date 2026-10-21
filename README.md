@@ -17,7 +17,7 @@ Every patcher works on your own legally owned copy of the game. Files are patche
 | **Celeste** | Complete | Standalone EXE Patch / Everest Mod | [Web Patcher](https://jevonlipsey.github.io/celeste-43aspect/) | [Repo](https://github.com/jevonlipsey/celeste-43aspect) |
 | **Enter the Gungeon** | In Progress | IL / Camera Hooks | Coming Soon | [Repo](https://github.com/jevonlipsey/gungeon-43aspect) |
 | **Hades II** | Planned | Targeted Boon-Selection UI Scale | TBD | TBD |
-| **Absolom** | Planned | Native Aspect Mod | TBD | TBD |
+| **Absolum** | Planned | Native Aspect Mod | TBD | TBD |
 
 What each patcher takes:
 
@@ -51,10 +51,9 @@ For Celeste on Android, use the web patcher rather than Everest. Getting Everest
 
 ### Native PC (Windows / macOS / Linux)
 
-- **Spelunky 2:** back up `discord_game_sdk.dll`, then replace it with the release dll in the folder next to `Spel2.exe`. You can also use the web patcher on `Spel2.exe`.
-- **Chef RPG:** use the web patcher, or drag `Assembly-CSharp.dll` onto the desktop `patcher.exe`. Then swap in `Assembly-CSharp-43.dll` as `Assembly-CSharp.dll`.
-- **Celeste:** install Everest and drop `CelesteFit.zip` into `Celeste/Mods/`, or use the web patcher on `Celeste.exe`.
-- Set the game to your display's native 4:3 resolution (for example 1280x960, 1024x768 or 1600x1200).
+1. Open the game's web patcher and patch the file from your game folder, or download the prebuilt files from the Releases page of the game's repo.
+2. Replace the originals in your game folder. Keep backups.
+3. Set the game to your display's native 4:3 resolution (for example 1280x960, 1024x768 or 1600x1200).
 
 On both platforms, Steam's "Verify integrity of game files" and game updates restore the original files. Re-patch after either. To uninstall, restore your backup.
 
@@ -66,8 +65,9 @@ Each mod's own README has the full install steps, configuration and troubleshoot
 | :--- | :--- |
 | `README.md` | this index |
 | `docs/index.html` | the static launchpad, served by GitHub Pages (Settings → Pages → deploy from `main`, `/docs`) |
+| `docs/img/` | card thumbnails, Steam store screenshots cropped to 800x600 |
 
-To add a game, add a row to the matrix above and a card to `docs/index.html`.
+To add a game, add a row to the matrix above, a card to `docs/index.html` and a thumbnail to `docs/img/`.
 
 ## Credits
 
@@ -75,4 +75,4 @@ To add a game, add a row to the matrix above and a card to `docs/index.html`.
 - [mikumaker/Celeste-Fit](https://github.com/mikumaker/Celeste-Fit), whose 4:3 work CelesteFit ports.
 - Mono.Cecil, Everest, MonoMod and FNA.
 
-These are unofficial fan projects, not affiliated with or endorsed by any of the games' developers or publishers. All games and their files belong to their respective owners.
+Not affiliated with or endorsed by any of the games' developers or publishers. All games, their files and screenshots belong to their respective owners.
