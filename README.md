@@ -18,9 +18,9 @@ Every patcher works on your own legally owned copy of the game. Files are patche
 | **Enter the Gungeon** | Complete | IL / Camera Hooks | [Web Patcher](https://jevonlipsey.github.io/gungeon-43aspect/) | [Repo](https://github.com/jevonlipsey/gungeon-43aspect) |
 | **Hades II** | Complete | Lua UI hook (`Content/Scripts/RoomLogic.lua`) | [Web Patcher](https://jevonlipsey.github.io/hades2-43aspect/) | [Repo](https://github.com/jevonlipsey/hades2-43aspect) |
 | **Absolum** | Complete | Native EXE Patch (`Absolum.exe`) | [Web Patcher](https://jevonlipsey.github.io/absolum-43aspect/) | [Repo](https://github.com/jevonlipsey/absolum-43aspect) |
-| **Hollow Knight: Silksong** | In Progress | Managed Assembly (`Assembly-CSharp.dll`) | TBD | TBD |
+| **Hollow Knight: Silksong** | Complete | Managed Assembly (`Assembly-CSharp.dll`) | [Web Patcher](https://jevonlipsey.github.io/silksong-43aspect/) | [Repo](https://github.com/jevonlipsey/silksong-43aspect) |
 | **Hades** | Planned | Viewport, HUD and Lua Patch (building on Hephaistos) | TBD | TBD |
-| **DREDGE** | In Progress | Managed Assembly (`Assembly-CSharp.dll`) | TBD | TBD |
+| **DREDGE** | Complete | Managed Assembly (`Assembly-CSharp.dll`) | [Web Patcher](https://jevonlipsey.github.io/dredge-43aspect/) | [Repo](https://github.com/jevonlipsey/dredge-43aspect) |
 | **Streets of Rage 4** | Planned | Native Aspect and HUD Patch | TBD | TBD |
 | **CrossCode** | Planned | Smooth Frame Pacing on Android, then Pixel-Perfect 4:3 | TBD | TBD |
 | **Persona 5 Royal** | Planned | Camera Aspect and UI Fit | TBD | TBD |
@@ -36,6 +36,8 @@ What each patcher takes:
 | Enter the Gungeon | `EtG_Data/Managed/Assembly-CSharp.dll` | Desktop patchers are on the [releases page](https://github.com/jevonlipsey/gungeon-43aspect/releases). |
 | Hades II | `Content/Scripts/RoomLogic.lua` | Zooms the boon-selection and dialogue screens to fill 4:3; gameplay already runs natively at 4:3. Steam build 25481925. `patch.py` in the [repo](https://github.com/jevonlipsey/hades2-43aspect) is the desktop alternative. |
 | Absolum | `x64.steam/Absolum.exe` | Steam build only; the game needs the Steam client running. Renders natively at 4:3 with the HUD and menus re-anchored. `patch.py` in the [repo](https://github.com/jevonlipsey/absolum-43aspect) is the desktop alternative. |
+| Hollow Knight: Silksong | `Hollow Knight Silksong_Data/Managed/Assembly-CSharp.dll` | The view gets taller (Vert+), as the game already does at 16:10, and the camera stays inside each room. |
+| DREDGE | `DREDGE_Data/Managed/Assembly-CSharp.dll` | Unlocks 4:3 resolutions. On DroidDeck, pick 1280x960 in the game's resolution setting. Instructions are in the [install guide](https://github.com/jevonlipsey/dredge-43aspect/blob/main/docs/INSTALL.md). |
 
 ## Quick guide
 
