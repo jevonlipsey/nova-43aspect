@@ -18,6 +18,13 @@ Every patcher works on your own legally owned copy of the game. Files are patche
 | **Enter the Gungeon** | Complete | IL / Camera Hooks | [Web Patcher](https://jevonlipsey.github.io/gungeon-43aspect/) | [Repo](https://github.com/jevonlipsey/gungeon-43aspect) |
 | **Hades II** | Complete | Lua UI hook (`Content/Scripts/RoomLogic.lua`) | [Web Patcher](https://jevonlipsey.github.io/hades2-43aspect/) | [Repo](https://github.com/jevonlipsey/hades2-43aspect) |
 | **Absolum** | Complete | Native EXE Patch (`Absolum.exe`) | [Web Patcher](https://jevonlipsey.github.io/absolum-43aspect/) | [Repo](https://github.com/jevonlipsey/absolum-43aspect) |
+| **Hollow Knight: Silksong** | Planned | Managed Assembly (`Assembly-CSharp.dll`) | TBD | TBD |
+| **Hades** | Planned | Viewport, HUD and Lua Patch (building on Hephaistos) | TBD | TBD |
+| **DREDGE** | Planned | Managed Assembly (`Assembly-CSharp.dll`) | TBD | TBD |
+| **Streets of Rage 4** | Planned | Native Aspect and HUD Patch | TBD | TBD |
+| **CrossCode** | Planned | Smooth Frame Pacing on Android, then Pixel-Perfect 4:3 | TBD | TBD |
+| **Persona 5 Royal** | Planned | Camera Aspect and UI Fit | TBD | TBD |
+| **Moonlighter** | Planned | Boot Fix on DroidDeck, then 4:3 | TBD | TBD |
 
 What each patcher takes:
 
