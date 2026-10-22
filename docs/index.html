@@ -23,6 +23,8 @@
   --ok-bg: #16281e;
   --plan: #b3a597;
   --plan-bg: #2b221b;
+  --prog: #f2c46b;
+  --prog-bg: #2e2412;
   --focus: #8ab4ff;
   --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
@@ -102,6 +104,7 @@ h1 { font-size: clamp(1.75rem, 4vw + .5rem, 2.6rem); line-height: 1.1; margin: 0
 .status::before { content: ""; width: .5rem; height: .5rem; border-radius: 50%; background: currentColor; }
 .status.complete { color: var(--ok); background: var(--ok-bg); }
 .status.planned { color: var(--plan); background: var(--plan-bg); }
+.status.progress { color: var(--prog); background: var(--prog-bg); }
 .method { margin: 0; font-size: .9rem; color: var(--muted); }
 .method strong { display: block; color: var(--text); font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .1rem; }
 
@@ -232,12 +235,15 @@ h3 { font-size: 1.05rem; margin: 0 0 .75rem; }
       </div>
     </li>
 
-    <li class="card planned">
+    <li class="card">
       <div class="thumb" style="--c1:#3d5a8a;--c2:#151a2a"><img class="shot" src="img/absolum.jpg" alt="" loading="lazy"><span class="ratio">4:3</span><h3 class="thumb-title">Absolum</h3></div>
       <div class="body">
-        <div class="meta"><span class="status planned">Planned</span></div>
-        <p class="method"><strong>Method</strong>Native aspect mod</p>
-        <div class="actions"><span class="btn off" aria-disabled="true">Patcher TBD</span></div>
+        <div class="meta"><span class="status complete">Complete</span></div>
+        <p class="method"><strong>Method</strong>Native EXE patch</p>
+        <div class="actions">
+          <a class="btn primary" href="https://jevonlipsey.github.io/absolum-43aspect/"><svg class="ico" aria-hidden="true"><use href="#i-launch"/></svg>Launch Patcher</a>
+          <a class="btn" href="https://github.com/jevonlipsey/absolum-43aspect" aria-label="Absolum source repo"><svg class="ico" aria-hidden="true"><use href="#i-code"/></svg>Repo</a>
+        </div>
       </div>
     </li>
   </ul>

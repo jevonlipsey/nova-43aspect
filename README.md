@@ -17,7 +17,7 @@ Every patcher works on your own legally owned copy of the game. Files are patche
 | **Celeste** | Complete | Standalone EXE Patch / Everest Mod | [Web Patcher](https://jevonlipsey.github.io/celeste-43aspect/) | [Repo](https://github.com/jevonlipsey/celeste-43aspect) |
 | **Enter the Gungeon** | Complete | IL / Camera Hooks | [Web Patcher](https://jevonlipsey.github.io/gungeon-43aspect/) | [Repo](https://github.com/jevonlipsey/gungeon-43aspect) |
 | **Hades II** | Complete | Lua UI hook (`Content/Scripts/RoomLogic.lua`) | [Web Patcher](https://jevonlipsey.github.io/hades2-43aspect/) | [Repo](https://github.com/jevonlipsey/hades2-43aspect) |
-| **Absolum** | Planned | Native Aspect Mod | TBD | TBD |
+| **Absolum** | Complete | Native EXE Patch (`Absolum.exe`) | [Web Patcher](https://jevonlipsey.github.io/absolum-43aspect/) | [Repo](https://github.com/jevonlipsey/absolum-43aspect) |
 
 What each patcher takes:
 
@@ -28,6 +28,7 @@ What each patcher takes:
 | Celeste | `Celeste.exe` | Needs the FNA 1.4.0.0 build (Steam: Properties → Betas → `beta 1.3.3.0`). The web patcher refuses an exe that already has Everest; use the [CelesteFit](https://github.com/jevonlipsey/celeste-43aspect/releases/latest) Everest mod for that. |
 | Enter the Gungeon | `EtG_Data/Managed/Assembly-CSharp.dll` | Desktop patchers are on the [releases page](https://github.com/jevonlipsey/gungeon-43aspect/releases). |
 | Hades II | `Content/Scripts/RoomLogic.lua` | Zooms the boon-selection and dialogue screens to fill 4:3; gameplay already runs natively at 4:3. Steam build 25481925. `patch.py` in the [repo](https://github.com/jevonlipsey/hades2-43aspect) is the desktop alternative. |
+| Absolum | `x64.steam/Absolum.exe` | Steam build only; the game needs the Steam client running. Renders natively at 4:3 with the HUD and menus re-anchored. `patch.py` in the [repo](https://github.com/jevonlipsey/absolum-43aspect) is the desktop alternative. |
 
 ## Quick guide
 
