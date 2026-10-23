@@ -23,7 +23,7 @@ Every patcher works on your own legally owned copy of the game. Files are patche
 | **DREDGE** | Complete | Managed Assembly (`Assembly-CSharp.dll`) | [Web Patcher](https://jevonlipsey.github.io/dredge-43aspect/) | [Repo](https://github.com/jevonlipsey/dredge-43aspect) |
 | **Streets of Rage 4** | Planned | Native Aspect and HUD Patch | TBD | TBD |
 | **CrossCode** | Planned | Smooth Frame Pacing on Android, then Pixel-Perfect 4:3 | TBD | TBD |
-| **Persona 5 Royal** | In Progress | Camera Aspect and UI Fit | [Web Patcher](https://jevonlipsey.github.io/persona5-43aspect/) | [Repo](https://github.com/jevonlipsey/persona5-43aspect) |
+| **Persona 5 Royal** | Complete | Camera Aspect and UI Fit | [Web Patcher](https://jevonlipsey.github.io/persona5-43aspect/) | [Repo](https://github.com/jevonlipsey/persona5-43aspect) |
 | **Moonlighter** | In Progress | Boot Fix on DroidDeck, then 4:3 | TBD | TBD |
 
 What each patcher takes:
