@@ -18,7 +18,7 @@ Every patcher works on your own legally owned copy of the game. Files are patche
 | **Enter the Gungeon** | Complete | IL / Camera Hooks | [Web Patcher](https://jevonlipsey.github.io/gungeon-43aspect/) | [Repo](https://github.com/jevonlipsey/gungeon-43aspect) |
 | **Hades II** | Complete | Lua UI hook (`Content/Scripts/RoomLogic.lua`) | [Web Patcher](https://jevonlipsey.github.io/hades2-43aspect/) | [Repo](https://github.com/jevonlipsey/hades2-43aspect) |
 | **Absolum** | Complete | Native EXE Patch (`Absolum.exe`) | [Web Patcher](https://jevonlipsey.github.io/absolum-43aspect/) | [Repo](https://github.com/jevonlipsey/absolum-43aspect) |
-| **Hollow Knight: Silksong** | In Progress | Managed Assembly (`Assembly-CSharp.dll`) | [Web Patcher](https://jevonlipsey.github.io/silksong-43aspect/) | [Repo](https://github.com/jevonlipsey/silksong-43aspect) |
+| **Hollow Knight: Silksong** | Complete | Managed Assembly (`Assembly-CSharp.dll`) | [Web Patcher](https://jevonlipsey.github.io/silksong-43aspect/) | [Repo](https://github.com/jevonlipsey/silksong-43aspect) |
 | **Hades** | In Progress | Viewport, HUD and Lua Patch (building on Hephaistos) | TBD | TBD |
 | **DREDGE** | Complete | Managed Assembly (`Assembly-CSharp.dll`) | [Web Patcher](https://jevonlipsey.github.io/dredge-43aspect/) | [Repo](https://github.com/jevonlipsey/dredge-43aspect) |
 | **Streets of Rage 4** | Planned | Native Aspect and HUD Patch | TBD | TBD |
