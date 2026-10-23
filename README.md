@@ -23,7 +23,7 @@ Every patcher works on your own legally owned copy of the game. Files are patche
 | **DREDGE** | Complete | Managed Assembly (`Assembly-CSharp.dll`) | [Web Patcher](https://jevonlipsey.github.io/dredge-43aspect/) | [Repo](https://github.com/jevonlipsey/dredge-43aspect) |
 | **Streets of Rage 4** | Planned | Native Aspect and HUD Patch | TBD | TBD |
 | **CrossCode** | Planned | Smooth Frame Pacing on Android, then Pixel-Perfect 4:3 | TBD | TBD |
-| **Persona 5 Royal** | In Progress | Camera Aspect and UI Fit | TBD | TBD |
+| **Persona 5 Royal** | In Progress | Camera Aspect and UI Fit | [Web Patcher](https://jevonlipsey.github.io/persona5-43aspect/) | [Repo](https://github.com/jevonlipsey/persona5-43aspect) |
 | **Moonlighter** | In Progress | Boot Fix on DroidDeck, then 4:3 | TBD | TBD |
 
 What each patcher takes:
@@ -38,6 +38,7 @@ What each patcher takes:
 | Absolum | `x64.steam/Absolum.exe` | Steam build only; the game needs the Steam client running. Renders natively at 4:3 with the HUD and menus re-anchored. `patch.py` in the [repo](https://github.com/jevonlipsey/absolum-43aspect) is the desktop alternative. |
 | Hollow Knight: Silksong | `Hollow Knight Silksong_Data/Managed/Assembly-CSharp.dll` | The view gets taller (Vert+), as the game already does at 16:10, and the camera stays inside each room. |
 | DREDGE | `DREDGE_Data/Managed/Assembly-CSharp.dll` | Unlocks 4:3 resolutions. On DroidDeck, pick 1280x960 in the game's resolution setting. Instructions are in the [install guide](https://github.com/jevonlipsey/dredge-43aspect/blob/main/docs/INSTALL.md). |
+| Persona 5 Royal | `P5R.exe` | Steam build. Renders 3D at native 4:3 (Vert+) and fills the 2D UI to 1280x960, removing the bottom 16:9 band and extending the event film overlay across the full screen. |
 
 ## Quick guide
 
