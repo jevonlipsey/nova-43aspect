@@ -25,6 +25,7 @@ Every patcher works on your own legally owned copy of the game. Files are patche
 | **CrossCode** | Planned | Smooth Frame Pacing on Android, then Pixel-Perfect 4:3 | TBD | TBD |
 | **Persona 5 Royal** | Complete | Camera Aspect and UI Fit | [Web Patcher](https://jevonlipsey.github.io/persona5-43aspect/) | [Repo](https://github.com/jevonlipsey/persona5-43aspect) |
 | **Moonlighter** | In Progress | Boot Fix on DroidDeck, then 4:3 | TBD | TBD |
+| **The Walking Dead: The Telltale Definitive Series** | Complete | Camera EXE Patch (`WDC.exe`) + Lua UI Re-anchor (`Tooltip.lua`) | TBD | [Repo](https://github.com/jevonlipsey/twd-43aspect) |
 
 What each patcher takes:
 
@@ -39,6 +40,7 @@ What each patcher takes:
 | Hollow Knight: Silksong | `Hollow Knight Silksong_Data/Managed/Assembly-CSharp.dll` | The view gets taller (Vert+), as the game already does at 16:10, and the camera stays inside each room. |
 | DREDGE | `DREDGE_Data/Managed/Assembly-CSharp.dll` | Unlocks 4:3 resolutions. On DroidDeck, pick 1280x960 in the game's resolution setting. Instructions are in the [install guide](https://github.com/jevonlipsey/dredge-43aspect/blob/main/docs/INSTALL.md). |
 | Persona 5 Royal | `P5R.exe` | Steam build. Renders 3D at native 4:3 (Vert+) and fills the 2D UI to 1280x960, removing the bottom 16:9 band and extending the event film overlay across the full screen. |
+| The Walking Dead: The Telltale Definitive Series | `WDC.exe` + two new files in `Archives/` | Steam build. Removes the forced 16:9 letterbox (Hor+ cameras) and re-anchors the interaction label ("Examine / ATM") inside the 4:3 frame at its authored size via a Lua resource-set patch on `<ProjectSeason1>`. |
 
 ## Quick guide
 
