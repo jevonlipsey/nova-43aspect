@@ -21,10 +21,10 @@ Every patcher works on your own legally owned copy of the game. Files are patche
 | **Hollow Knight: Silksong** | Complete | Managed Assembly (`Assembly-CSharp.dll`) | [Web Patcher](https://jevonlipsey.github.io/silksong-43aspect/) | [Repo](https://github.com/jevonlipsey/silksong-43aspect) |
 | **Hades** | In Progress | Viewport, HUD and Lua Patch (building on Hephaistos) | TBD | TBD |
 | **DREDGE** | Complete | Managed Assembly (`Assembly-CSharp.dll`) | [Web Patcher](https://jevonlipsey.github.io/dredge-43aspect/) | [Repo](https://github.com/jevonlipsey/dredge-43aspect) |
-| **Streets of Rage 4** | Planned | Native Aspect and HUD Patch | TBD | TBD |
+| **Streets of Rage 4** | Complete | Native 4:3 EXE Patch (`SOR4.exe`) + Menu Re-anchor (`data/bigfile`) | TBD | [Repo](https://github.com/jevonlipsey/sor4-43aspect) |
 | **CrossCode** | Planned | Smooth Frame Pacing on Android, then Pixel-Perfect 4:3 | TBD | TBD |
 | **Persona 5 Royal** | Complete | Camera Aspect and UI Fit | [Web Patcher](https://jevonlipsey.github.io/persona5-43aspect/) | [Repo](https://github.com/jevonlipsey/persona5-43aspect) |
-| **Moonlighter** | In Progress | Boot Fix on DroidDeck, then 4:3 | TBD | TBD |
+| **Moonlighter** | Complete | Managed Assembly (`Assembly-CSharp.dll`) | TBD | [Repo](https://github.com/jevonlipsey/moonlighter-43aspect) |
 | **The Walking Dead: The Telltale Definitive Series** | Complete | Camera EXE Patch (`WDC.exe`) + Lua UI Re-anchor (`Tooltip.lua`) | TBD | [Repo](https://github.com/jevonlipsey/twd-43aspect) |
 
 What each patcher takes:
@@ -41,6 +41,8 @@ What each patcher takes:
 | DREDGE | `DREDGE_Data/Managed/Assembly-CSharp.dll` | Unlocks 4:3 resolutions. On DroidDeck, pick 1280x960 in the game's resolution setting. Instructions are in the [install guide](https://github.com/jevonlipsey/dredge-43aspect/blob/main/docs/INSTALL.md). |
 | Persona 5 Royal | `P5R.exe` | Steam build. Renders 3D at native 4:3 (Vert+) and fills the 2D UI to 1280x960, removing the bottom 16:9 band and extending the event film overlay across the full screen. |
 | The Walking Dead: The Telltale Definitive Series | `WDC.exe` + two new files in `Archives/` | Steam build. Removes the forced 16:9 letterbox (Hor+ cameras) and re-anchors the interaction label ("Examine / ATM") inside the 4:3 frame at its authored size via a Lua resource-set patch on `<ProjectSeason1>`. |
+| Streets of Rage 4 | `SOR4.exe` + `data/bigfile` | Steam build; needs the Steam client running. Gameplay and HUD render natively at 4:3, and the loading screen, main menu, stage map and pause menu are re-laid out to fill 1280x960. |
+| Moonlighter | `Moonlighter_Data/Managed/Assembly-CSharp.dll` | Boots on DroidDeck and keeps Steam integration. The game already renders at 4:3; in dungeon rooms the camera pans sideways with the player so the side doors come into view, using the game's own boss-room follow. Town is unchanged. |
 
 ## Quick guide
 
