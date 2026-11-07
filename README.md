@@ -19,7 +19,7 @@ Every patcher works on your own legally owned copy of the game. Files are patche
 | **Hades II** | Complete | Lua UI hook (`Content/Scripts/RoomLogic.lua`) | [Web Patcher](https://jevonlipsey.github.io/hades2-43aspect/) | [Repo](https://github.com/jevonlipsey/hades2-43aspect) |
 | **Absolum** | Complete | Native EXE Patch (`Absolum.exe`) | [Web Patcher](https://jevonlipsey.github.io/absolum-43aspect/) | [Repo](https://github.com/jevonlipsey/absolum-43aspect) |
 | **Hollow Knight: Silksong** | Complete | Managed Assembly (`Assembly-CSharp.dll`) | [Web Patcher](https://jevonlipsey.github.io/silksong-43aspect/) | [Repo](https://github.com/jevonlipsey/silksong-43aspect) |
-| **Hades** | In Progress | Viewport, HUD and Lua Patch (building on Hephaistos) | TBD | TBD |
+| **Hades** | Complete | Viewport, HUD and Lua Patch (building on Hephaistos) | [Web Patcher](https://jevonlipsey.github.io/hades-43aspect/) | [Repo](https://github.com/jevonlipsey/hades-43aspect) |
 | **DREDGE** | Complete | Managed Assembly (`Assembly-CSharp.dll`) | [Web Patcher](https://jevonlipsey.github.io/dredge-43aspect/) | [Repo](https://github.com/jevonlipsey/dredge-43aspect) |
 | **Streets of Rage 4** | Complete | Native 4:3 EXE Patch (`SOR4.exe`) + Menu Re-anchor (`data/bigfile`) | [Web Patcher](https://jevonlipsey.github.io/sor4-43aspect/) | [Repo](https://github.com/jevonlipsey/sor4-43aspect) |
 | **CrossCode** | Planned | Smooth Frame Pacing on Android, then Pixel-Perfect 4:3 | TBD | TBD |
@@ -35,6 +35,7 @@ What each patcher takes:
 | Chef RPG | `Chef RPG_Data/Managed/Assembly-CSharp.dll` | Desktop patchers for Windows, macOS and Linux are on the [releases page](https://github.com/jevonlipsey/chefrpg-43aspect/releases). |
 | Celeste | `Celeste.exe` | Needs the FNA 1.4.0.0 build (Steam: Properties → Betas → `beta 1.3.3.0`). The web patcher refuses an exe that already has Everest; use the [CelesteFit](https://github.com/jevonlipsey/celeste-43aspect/releases/latest) Everest mod for that. |
 | Enter the Gungeon | `EtG_Data/Managed/Assembly-CSharp.dll` | Desktop patchers are on the [releases page](https://github.com/jevonlipsey/gungeon-43aspect/releases). |
+| Hades | your `Hades` game folder (about 40 files read; outputs `Hades-4x3-patch.zip`) | Steam build. [Hephaistos](https://github.com/nbusseneau/hephaistos) at 1280x960 for gameplay and the HUD, plus a layer that zooms dialogue, boon choices, the Mirror, Pact, Codex, pause and main menu to fill 4:3 at full size. Unzip over the game folder. |
 | Hades II | `Content/Scripts/RoomLogic.lua` | Zooms the dialogue and choice screens (boons, Selene's hexes, Path of Stars, Nemesis' trades, shops, Pool of Purging, Well of Charon) to fill 4:3; gameplay already runs natively at 4:3. Steam build 25481925. `patch.py` in the [repo](https://github.com/jevonlipsey/hades2-43aspect) is the desktop alternative. |
 | Absolum | `x64.steam/Absolum.exe` | Steam build only; the game needs the Steam client running. Renders natively at 4:3 with the HUD and menus re-anchored. `patch.py` in the [repo](https://github.com/jevonlipsey/absolum-43aspect) is the desktop alternative. |
 | Hollow Knight: Silksong | `Hollow Knight Silksong_Data/Managed/Assembly-CSharp.dll` | The view gets taller (Vert+), as the game already does at 16:10, and the camera stays inside each room. |
