@@ -21,7 +21,7 @@ Every patcher works on your own legally owned copy of the game. Files are patche
 | **Hollow Knight: Silksong** | Complete | Managed Assembly (`Assembly-CSharp.dll`) | [Web Patcher](https://jevonlipsey.github.io/silksong-43aspect/) | [Repo](https://github.com/jevonlipsey/silksong-43aspect) |
 | **Hades** | In Progress | Viewport, HUD and Lua Patch (building on Hephaistos) | TBD | TBD |
 | **DREDGE** | Complete | Managed Assembly (`Assembly-CSharp.dll`) | [Web Patcher](https://jevonlipsey.github.io/dredge-43aspect/) | [Repo](https://github.com/jevonlipsey/dredge-43aspect) |
-| **Streets of Rage 4** | Complete | Native 4:3 EXE Patch (`SOR4.exe`) + Menu Re-anchor (`data/bigfile`) | TBD | [Repo](https://github.com/jevonlipsey/sor4-43aspect) |
+| **Streets of Rage 4** | Complete | Native 4:3 EXE Patch (`SOR4.exe`) + Menu Re-anchor (`data/bigfile`) | [Web Patcher](https://jevonlipsey.github.io/sor4-43aspect/) | [Repo](https://github.com/jevonlipsey/sor4-43aspect) |
 | **CrossCode** | Planned | Smooth Frame Pacing on Android, then Pixel-Perfect 4:3 | TBD | TBD |
 | **Persona 5 Royal** | Complete | Camera Aspect and UI Fit | [Web Patcher](https://jevonlipsey.github.io/persona5-43aspect/) | [Repo](https://github.com/jevonlipsey/persona5-43aspect) |
 | **Moonlighter** | Complete | Managed Assembly (`Assembly-CSharp.dll`) | [Web Patcher](https://jevonlipsey.github.io/moonlighter-43aspect/) | [Repo](https://github.com/jevonlipsey/moonlighter-43aspect) |
