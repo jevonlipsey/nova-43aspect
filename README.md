@@ -22,7 +22,7 @@ Every patcher works on your own legally owned copy of the game. Files are patche
 | **Hades** | Complete | Viewport, HUD and Lua Patch (building on Hephaistos) | [Web Patcher](https://jevonlipsey.github.io/hades-43aspect/) | [Repo](https://github.com/jevonlipsey/hades-43aspect) |
 | **DREDGE** | Complete | Managed Assembly (`Assembly-CSharp.dll`) | [Web Patcher](https://jevonlipsey.github.io/dredge-43aspect/) | [Repo](https://github.com/jevonlipsey/dredge-43aspect) |
 | **Streets of Rage 4** | Complete | Native 4:3 EXE Patch (`SOR4.exe`) + Menu Re-anchor (`data/bigfile`) | [Web Patcher](https://jevonlipsey.github.io/sor4-43aspect/) | [Repo](https://github.com/jevonlipsey/sor4-43aspect) |
-| **CrossCode** | Planned | Smooth Frame Pacing on Android, then Pixel-Perfect 4:3 | TBD | TBD |
+| **CrossCode** | Complete | Native 4:3 View (`assets/node-webkit.html`) | [Web Patcher](https://jevonlipsey.github.io/crosscode-43aspect/) | [Repo](https://github.com/jevonlipsey/crosscode-43aspect) |
 | **Persona 5 Royal** | Complete | Camera Aspect and UI Fit | [Web Patcher](https://jevonlipsey.github.io/persona5-43aspect/) | [Repo](https://github.com/jevonlipsey/persona5-43aspect) |
 | **Moonlighter** | Complete | Managed Assembly (`Assembly-CSharp.dll`) | [Web Patcher](https://jevonlipsey.github.io/moonlighter-43aspect/) | [Repo](https://github.com/jevonlipsey/moonlighter-43aspect) |
 | **The Walking Dead: The Telltale Definitive Series** | Complete | Camera EXE Patch (`WDC.exe`) + Lua UI Re-anchor (`Tooltip.lua`) | [Web Patcher](https://jevonlipsey.github.io/twd-43aspect/) | [Repo](https://github.com/jevonlipsey/twd-43aspect) |
@@ -43,6 +43,7 @@ What each patcher takes:
 | Persona 5 Royal | `P5R.exe` | Steam build. Renders 3D at native 4:3 (Vert+) and fills the 2D UI to 1280x960, removing the bottom 16:9 band and extending the event film overlay across the full screen. |
 | The Walking Dead: The Telltale Definitive Series | `WDC.exe` + `Archives/WDC_pc_ProjectSeason1_data.ttarch2` (read only); outputs `WDC.exe` plus two new files in `Archives/` | Steam build. Removes the forced 16:9 letterbox (Hor+ cameras) and re-anchors the interaction label ("Examine / ATM") inside the 4:3 frame at its authored size via a Lua resource-set patch on `<ProjectSeason1>`. |
 | Streets of Rage 4 | `SOR4.exe` + `data/bigfile` | Steam build; needs the Steam client running. Gameplay and HUD render natively at 4:3, and the loading screen, main menu, stage map and pause menu are re-laid out to fill 1280x960. |
+| CrossCode | `assets/node-webkit.html` | Same file in the Windows, macOS and Linux Steam depots, so it covers Proton and native builds (including native arm64 NW.js). The game draws a 480x360 view, and its HUD and menus lay out at full size. |
 | Moonlighter | `Moonlighter_Data/Managed/Assembly-CSharp.dll` | Boots on DroidDeck and keeps Steam integration. The game already renders at 4:3; in dungeon rooms the camera pans sideways with the player so the side doors come into view, using the game's own boss-room follow. Town is unchanged. |
 
 ## Quick guide
